@@ -9,7 +9,7 @@ dmg_six = 5
 
 
 def calculate_damage(opening_attack, core_damage, finishing_move):
-    # ?
+    return opening_attack + core_damage + finishing_move
 
 
 # Don't touch below this line

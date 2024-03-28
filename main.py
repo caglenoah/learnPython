@@ -1,3 +1,4 @@
-print("Welcome to Fantasy Quest!")
+print("Starting up server...')
+prnt("local server is listening on port 8080")
 
-# Find the syntax error in the code and correct it.
+# Fix the 2 errors in the code and get it to run!

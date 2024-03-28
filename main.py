@@ -1,5 +1,6 @@
-print("Use the arrow keys to move")
 
 
 # DIRECTIONS
-#We need to tell our new players how to move! Print the following text to the console: Use the arrow keys to move
+#Our hero's sword does 250 normally but does an additional 75 damage when it's enchanted.
+#Calculate and print the result of 250 + 75.
+

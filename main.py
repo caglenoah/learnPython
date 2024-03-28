@@ -1,8 +1,28 @@
 player_health = 1000
 
+# reduce by 100 here
 
 print(player_health)
 
-# We need to keep track of our hero's health!
+# and here
 
-# On the first line of code, create a new variable named player_health and set it equal to 1000.
+print(player_health)
+
+# and here
+
+print(player_health)
+
+# and here
+
+print(player_health)
+
+
+
+
+
+# We need to reduce our hero's health as they take damage in the game.
+
+# Before each print() function in the provided code, change the value of player_health to 100 less than it was before.
+
+
+

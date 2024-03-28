@@ -1,10 +1,23 @@
-player_health = 1000
-armor_multiplier = 2
+dmg_one = 2
+dmg_two = 4
+dmg_three = 3
+dmg_four = -1
+dmg_five = 10
+dmg_six = 5
 
-armored_health = player_health * armor_multiplier
-print(armored_health)
+# Don't touch above this line
 
 
+def calculate_damage(opening_attack, core_damage, finishing_move):
+    # ?
 
 
-# Create a new variable called armored_health on line 4 and set it equal to player_health * armor_multiplier
+# Don't touch below this line
+
+print("Getting damage for", dmg_one, dmg_two, "and", dmg_three, "...")
+print(calculate_damage(dmg_one, dmg_two, dmg_three), "points of damage dealt!")
+print("=====================================")
+
+print("Getting damage for", dmg_four, dmg_five, "and", dmg_six, "...")
+print(calculate_damage(dmg_four, dmg_five, dmg_six), "points of damage dealt!")
+print("=====================================")

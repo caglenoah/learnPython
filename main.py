@@ -1,21 +1,16 @@
-def get_title(first_name, last_name, job):
-    title = first_name + " " + last_name + " the " + job
-    return title
+def curse(weapon_damage):
+lesser_cursed = weapon_damage * .5
+greater_cursed = weapon_damage * .25
 
 
-# Don't touch below this line
+
+# Don't modify below this line
 
 
-def test(first_name, last_name, job):
-    title = get_title(first_name, last_name, job)
-    print("First name:", first_name)
-    print("Last name:", last_name)
-    print("Job:", job)
-    print("Title:", title)
+def test(weapon_damage):
+    print("Weapon's base damage:", float(weapon_damage))
+    print("Cursing...")
+    lesser_cursed, greater_cursed = curse(weapon_damage)
+    print("With lesser curse the damage is:", float(lesser_cursed), "damage.")
+    print("With greater curse the damage is:", float(greater_cursed), "damage.")
     print("=====================================")
-
-
-test("Frodo", "Baggins", "warrior")
-test("Bilbo", "Baggins", "thief")
-test("Gandalf", "The Grey", "wizard")
-test("Aragorn", "Son of Arathorn", "ranger")

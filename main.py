@@ -1,5 +1,7 @@
 def become_warrior(first_name, last_name, power):
-    # ?
+    power = power + 1
+    full_name = first_name + last_name + " the warrior"
+    return full_name, power
 
 
 # Don't edit below this line
@@ -19,5 +21,10 @@ def test(first_name, last_name, power):
 main()
 
 
+
 # DIRECTIONS
 # Complete the become_warrior function. It accepts 3 inputs:
+# It should return 2 values:
+
+# First, a string of this format: "first_name last_name the warrior"
+# Second, the power input after adding 1 to it.

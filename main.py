@@ -1,4 +1,4 @@
-print("Starting up server...")
-print("local server is listening on port 8080")
+print("(250 + 241 + 244 + 255) / 4")
 
-# Fix the 2 errors in the code and get it to run!
+
+# Debug the code so that it correctly prints the solution to the math problem.

@@ -1,30 +1,41 @@
-def become_warrior(first_name, last_name, power):
-    power = power + 1
-    full_name = first_name + last_name + " the warrior"
-    return full_name, power
+def get_punched(health, armor):
+    # ?
 
 
-# Don't edit below this line
+def get_slashed(health, armor):
+    # ?
 
 
-def main():
-    test("Frodo", "Baggins", 5)
-    test("Bilbo", "Baggins", 10)
-    test("Gandalf", "The Grey", 9000)
+# Don't touch below this line
 
 
-def test(first_name, last_name, power):
-    title_string, power = become_warrior(first_name, last_name, power)
-    print(title_string, "has a power level of:", power)
+def test(health, armor):
+    print(f"Health: {health}, Armor: {armor}")
+    print(f"Health after punch: {get_punched(health, armor)}")
+    print("=====================================")
+    print(f"Health: {health}, Armor: {armor}")
+    print(f"Health after slash: {get_slashed(health, armor)}\n")
+    print("=====================================")
+    print(f"Health: {health}, Armor: no armor!")
+    print(f"Health after slash: {get_slashed(health)}\n")
+    print("=====================================")
+    print(f"Health: {health}, Armor: no armor!")
+    print(f"Health after punch: {get_punched(health)}")
+    print("=====================================")
 
 
-main()
+test(400, 5)
+test(300, 3)
+test(200, 1)
 
+# Complete both the get_punched and get_slashed functions. They should each take 2 arguments:
 
+# health: An integer
+# armor: An integer
+# Change the functions so if no armor argument is passed, armor defaults to 0.
 
-# DIRECTIONS
-# Complete the become_warrior function. It accepts 3 inputs:
-# It should return 2 values:
-
-# First, a string of this format: "first_name last_name the warrior"
-# Second, the power input after adding 1 to it.
+# Each attack does a different amount of damage. Getting 
+# punched does 50 damage. Getting slashed does 100 damage. The armor should
+# absorb some of the attack by subtracting from the damage.
+# The rest of the damage should be applied to the health. Return a single integer, 
+# the health left over after the attack.

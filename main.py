@@ -1,10 +1,5 @@
-sword_damage = 10 
-player_health = 100
-health_after_attack = player_health - sword_damage
+print("Use the arrow keys to move")
 
-print(f"Bad_Mamajama's health is: {player_health}")
-print(f"Bad_Mamajama is hit by a sword for {sword_damage} damage")
-print(f"Bad_Mamajama's health is now: {health_after_attack}")
 
-#DIRECTIONS
-#FIX THE MATH ERROR 
+# DIRECTIONS
+#We need to tell our new players how to move! Print the following text to the console: Use the arrow keys to move

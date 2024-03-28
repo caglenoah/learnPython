@@ -1,28 +1,10 @@
 player_health = 1000
+armor_multiplier = 2
 
-player_health = player_health - 100
-
-print(player_health)
-
-player_health = player_health - 100
-
-print(player_health)
-
-player_health = player_health - 100
-
-print(player_health)
-
-player_health = player_health - 100
-
-print(player_health)
+# create armored_health here
+print(armored_health)
 
 
 
 
-
-# We need to reduce our hero's health as they take damage in the game.
-
-# Before each print() function in the provided code, change the value of player_health to 100 less than it was before.
-
-
-
+# Create a new variable called armored_health on line 4 and set it equal to player_health * armor_multiplier

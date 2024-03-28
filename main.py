@@ -1,6 +1,7 @@
 def curse(weapon_damage):
-lesser_cursed = weapon_damage * .5
-greater_cursed = weapon_damage * .25
+    lesser_cursed = weapon_damage * .5
+    greater_cursed = weapon_damage * .25
+    return lesser_cursed, greater_cursed
 
 
 

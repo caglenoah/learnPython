@@ -1,3 +1,1 @@
-def total_xp(level, xp_to_add):
-    level_to_xp = level * 100
-    return level_to_xp + xp_to_add
+def take_magic_damage(health, resist, amp, spell_power):

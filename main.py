@@ -1,4 +1,5 @@
 def calculate_damage(sword, arrow, spear, dagger, fire):
-    total_damage = 0
-    average_damage = 0
+    total_damage = sword + arrow + spear + dagger + fire
+    average_damage = total_damage / 5 
+   
     return total_damage, average_damage

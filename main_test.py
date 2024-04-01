@@ -1,26 +1,28 @@
 from main import *
 
 run_cases = [
-    (3, 4, "no charges yet"),
-    (5, 2, "overtime charged"),
+    (101, 100, True, False, False),
+    (50, 100, False, True, False),
+    (100, 100, False, False, True),
 ]
 
 submit_cases = run_cases + [
-    (2, 2, "overtime charged"),
-    (0, 1, "no charges yet"),
-    (1, 1, "overtime charged"),
-    (100, 2, "overtime charged"),
-    (2500, 3, "overtime charged"),
+    (150, 70, True, False, False),
+    (80, 150, False, True, False),
+    (0, 0, False, False, True),
+    (1, 1, False, False, True),
+    (1000, 500, True, False, False),
+    (500, 1000, False, True, False),
 ]
 
 
-def test(input1, input2, expected_output):
+def test(input1, input2, expected_output1, expected_output2, expected_output3):
     print("---------------------------------")
     print(f"Inputs: {input1}, {input2}")
-    print(f"Expecting: {expected_output}")
-    result = check_parking_meter(input1, input2)
+    print(f"Expecting: {expected_output1}, {expected_output2}, {expected_output3}")
+    result = combat_evaluation(input1, input2)
     print(f"Actual: {result}")
-    if result == expected_output:
+    if result == (expected_output1, expected_output2, expected_output3):
         print("Pass")
         return True
     print("Fail")

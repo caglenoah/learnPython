@@ -1,4 +1,5 @@
-def check_parking_meter(time_parked, time_purchased):
-    if time_parked >= time_purchased:
-        return "overtime charged"
-    return "no charges yet"
+def combat_evaluation(player_power, enemy_defense):
+    advantage, disadvantage, evenly_matched = False, False, False
+
+
+     return advantage, disadvantage, evenly_matched

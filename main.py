@@ -5,16 +5,16 @@ can_edit_guild = 0b0001
 
 
 def can_create_bits(user_permissions):
-    return user
+    return user_permissions & can_create_guild
 
 
 def can_review_bits(user_permissions):
-    pass
+    return user_permissions & can_review_guild
 
 
 def can_delete_bits(user_permissions):
-    pass
+    return user_permissions & can_delete_guild
 
 
 def can_edit_bits(user_permissions):
-    pass
+    return user_permissions & can_edit_guild

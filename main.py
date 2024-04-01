@@ -1,3 +1,5 @@
-def count_down(start, end):
-    for i in range(start, end, -1):
-        print(i)
+def sum_of_odd_numbers(end):
+    total = 0
+    for i in range(1, end, 2):
+        total += i
+    return total

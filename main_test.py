@@ -1,25 +1,25 @@
 from main import *
 
 run_cases = [
-    (3, 5, 2, 1, 4, (15, 3.0)),
-    (5, 5, 5, 5, 5, (25, 5.0)),
+    (1000, 100, 900),
+    (900, 60, 840),
 ]
 
 submit_cases = run_cases + [
-    (1, 2, 3, 4, 5, (15, 3.0)),
-    (0, 0, 0, 0, 10, (10, 2.0)),
-    (0, 0, 0, 0, 0, (0, 0.0)),
-    (10, 20, 30, 40, 50, (150, 30.0)),
-    (2, 2, 2, 2, 2, (10, 2.0)),
-    (1, 1, 1, 1, 1, (5, 1.0)),
+    (840, 10, 830),
+    (830, 3, 827),
+    (0, 0, 0),
+    (1, 1, 0),
+    (100, 2, 98),
+    (2500, 3, 2497),
 ]
 
 
-def test(sword, arrow, spear, dagger, fire, expected_output):
+def test(current_health, damage, expected_output):
     print("---------------------------------")
-    print(f"Inputs: {sword}, {arrow}, {spear}, {dagger}, {fire}")
+    print(f"Inputs: {current_health}, {damage}")
     print(f"Expecting: {expected_output}")
-    result = calculate_damage(sword, arrow, spear, dagger, fire)
+    result = get_hurt(current_health, damage)
     print(f"Actual: {result}")
     if result == expected_output:
         print("Pass")

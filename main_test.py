@@ -1,26 +1,29 @@
 from main import *
 
 run_cases = [
-    (17, 18, False),
-    (20, 25, True),
+    (22, False, 8, True),
+    (41, False, 1, False),
+    (14, False, 7, False),
 ]
 
 submit_cases = run_cases + [
-    (1, 0, False),
-    (16, 13, True),
-    (5, 5, True),
-    (1, 1, False),
-    (20, 20, True),
-    (15, 10, True),
-    (2, 3, False),
+    (21, False, 5, True),
+    (107, False, 9, True),
+    (23, True, 5, False),
+    (21, False, 4, False),
+    (57, False, 11, False),
+    (20, False, 5, False),
 ]
 
 
-def test(input1, input2, expected_output):
+def test(input1, input2, input3, expected_output):
     print("---------------------------------")
-    print(f"Inputs: {input1}, {input2}")
+    print(f"Inputs:")
+    print(f" * customer_age: {input1}")
+    print(f" * on_break: {input2}")
+    print(f" * time: {input3}")
     print(f"Expecting: {expected_output}")
-    result = does_attack_hit(input1, input2)
+    result = should_serve_customer(input1, input2, input3)
     print(f"Actual: {result}")
     if result == expected_output:
         print("Pass")

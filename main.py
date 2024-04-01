@@ -1,20 +1,15 @@
-def countdown_to_blastoff():
-    for i in range(10, 0, -1):
-        if i > 1:
-            print(i, "...")
-        else:
-            print (i, "...Blastoff!")
+def calculate_squares(start, end):
 
-
-
-def test():
-    print("Counting down to blastoff:")
-    countdown_to_blastoff()
+def test(start, end):
+    print(f"Calculating squares from {start} to {end - 1}:")
+    calculate_squares(start, end)
     print("=====================================")
 
 
 def main():
-    test()
+    test(100, 105)
+    test(1, 3)
+    test(11, 14)
 
 
 main()

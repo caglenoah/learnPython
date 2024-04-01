@@ -1,3 +1,1 @@
-def calculate_guild_perms(glorfindel, galadriel, elendil, elrond):
-     guild_perms = glorfindel | galadriel | elendil | elrond 
-     return guild_perms
+def body_parts(num_heads, num_arms, num_fingers):

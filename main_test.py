@@ -1,25 +1,27 @@
 from main import *
 
 run_cases = [
-    ("1", "10", "1010", (1, 2, 10)),
-    ("101", "11", "10100", (5, 3, 20)),
-    ("111", "1011", "11010", (7, 11, 26)),
+    (5, 6, False),
+    (5, 5, False),
+    (7, 6, True),
 ]
 
 submit_cases = run_cases + [
-    ("0", "0", "0", (0, 0, 0)),
-    ("1111", "1111", "1111", (15, 15, 15)),
-    ("101010", "110011", "101010", (42, 51, 42)),
+    (10, 3, True),
+    (2, 2, False),
+    (0, 0, False),
+    (10, 5, True),
+    (5, 10, False),
 ]
 
 
-def test(input1, input2, input3, expected_output):
+def test(player_1_score, player_2_score, expected):
     print("---------------------------------")
-    print(f"Inputs: {input1}, {input2}, {input3}")
-    print(f"Expecting: {expected_output}")
-    result = body_parts(input1, input2, input3)
+    print(f"Inputs: {player_1_score}, {player_2_score}")
+    print(f"Expecting: {expected}")
+    result = player_1_wins(player_1_score, player_2_score)
     print(f"Actual: {result}")
-    if result == expected_output:
+    if result == expected:
         print("Pass")
         return True
     print("Fail")

@@ -1,28 +1,26 @@
 from main import *
 
 run_cases = [
-    (101, 100, True, False, False),
-    (50, 100, False, True, False),
-    (100, 100, False, False, True),
+    (8, 50, 22, True),
+    (9, 100, 20, False),
 ]
 
 submit_cases = run_cases + [
-    (150, 70, True, False, False),
-    (80, 150, False, True, False),
-    (0, 0, False, False, True),
-    (1, 1, False, False, True),
-    (1000, 500, True, False, False),
-    (500, 1000, False, True, False),
+    (10, 50, 18, True),
+    (3, 105, 22, False),
+    (1, 1, 2, True),
+    (2, 1, 1, True),
+    (1, 2, 1, False),
 ]
 
 
-def test(input1, input2, expected_output1, expected_output2, expected_output3):
+def test(input1, input2, input3, expected_output):
     print("---------------------------------")
-    print(f"Inputs: {input1}, {input2}")
-    print(f"Expecting: {expected_output1}, {expected_output2}, {expected_output3}")
-    result = combat_evaluation(input1, input2)
+    print(f"Inputs: {input1}, {input2}, {input3}")
+    print(f"Expecting: {expected_output}")
+    result = has_enough_gas(input1, input2, input3)
     print(f"Actual: {result}")
-    if result == (expected_output1, expected_output2, expected_output3):
+    if result == expected_output:
         print("Pass")
         return True
     print("Fail")

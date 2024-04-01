@@ -1,2 +1,1 @@
-def can_withstand_blow(hero_armor, enemy_damage):
-      return hero_armor >= enemy_damage
+def check_swords_for_army(number_of_swords, number_of_soldiers):

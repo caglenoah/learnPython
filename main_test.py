@@ -1,26 +1,28 @@
 from main import *
 
 run_cases = [
-    (2, 5),
-    (3, 15),
-    (4, 30),
+    (7, True),
+    (-7, False),
+    (9, False),
+    (23, True),
 ]
 
 submit_cases = run_cases + [
-    (1, 0),
-    (5, 50),
-    (7, 105),
-    (10, 225),
-    (15, 525),
-    (20, 950),
+    (-1, False),
+    (0, False),
+    (1, False),
+    (2, True),
+    (4, False),
+    (31, True),
+    (100, False),
 ]
 
 
 def test(input1, expected_output):
     print("---------------------------------")
-    print(f"Inputs: {input1}")
+    print(f"Input number: {input1}")
     print(f"Expecting: {expected_output}")
-    result = calculate_experience_points(input1)
+    result = is_prime(input1)
     print(f"Actual: {result}")
     if result == expected_output:
         print("Pass")

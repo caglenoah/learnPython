@@ -1,25 +1,7 @@
-def smelt_ore():
-    inventory = ["Healing Potion", "Iron Ore", "Bread", "Shortsword"]
-    print(f"Inventory: {inventory}")
+def generate_user_list(num_of_users):
+    player_ids = []
 
-    # don't touch above this line
-    inventory[1] = "Iron Bar"
+    for i in range(0, num_of_users):
+     
 
-    # ?
-
-    # don't touch below this line
-
-    return inventory
-
-
-def test():
-    inventory = smelt_ore()
-    print(f"Smelting ore: {inventory}")
-    print("=====================================")
-
-
-def main():
-    test()
-
-
-main()
+    return player_ids

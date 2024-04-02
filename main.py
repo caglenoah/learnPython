@@ -3,6 +3,7 @@ def smelt_ore():
     print(f"Inventory: {inventory}")
 
     # don't touch above this line
+    inventory[1] = "Iron Bar"
 
     # ?
 

@@ -5,7 +5,13 @@ def get_item_counts(items):
 
     # don't touch above this line
 
-
+    for i in range(0, len(items)):
+        if i == "Potion":
+            potion_count = potion_count + 1
+        elif i == "Bread":
+            bread_count = bread_count + 1
+        elif i == "Shortsword":
+            shortsword_count = shortsword_count + 1
     
 
     # don't touch below this line

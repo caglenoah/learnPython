@@ -1,4 +1,7 @@
 def get_first_item(items):
+    if items == []:
+        return "ERROR"
+    return items[0]
 
 
    

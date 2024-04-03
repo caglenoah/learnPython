@@ -8,3 +8,8 @@ def is_top_weapon(weapon):
         "spellbook",
         "spiked knuckles",
     ]
+
+    if weapon in top_weapons:
+        return True
+    return False
+

@@ -1,32 +1,13 @@
-def clear_inventory():
-    inventory = [
-        "Healing Potion",
-        "Iron Bar",
-        "Kite Shield",
-        "Shortsword",
-        "Leather Scraps",
-        "Tattered Cloth",
-    ]
-
-    print(f"inventory: {inventory}")
+def get_item_counts(items):
+    potion_count = 0
+    bread_count = 0
+    shortsword_count = 0
 
     # don't touch above this line
 
-    for i in range(0, len(inventory)):
-        item = inventory.pop()
-        
-        # don't touch below this line
-        print(f"Selling: {item}")
-        print(f"inventory: {inventory}")
 
+    
 
-def test():
-    clear_inventory()
-    print("=====================================")
+    # don't touch below this line
 
-
-def main():
-    test()
-
-
-main()
+    return potion_count, bread_count, shortsword_count

@@ -1,13 +1,12 @@
 from main import *
 
-run_cases = [([1, 2, 3, 4, 5], 5), ([1, 2, 300, 4, 5], 300)]
+run_cases = [(10, [1, 3, 5, 7, 9]), (20, [1, 3, 5, 7, 9, 11, 13, 15, 17, 19])]
 
 submit_cases = run_cases + [
-    ([1, 20, 3, 4, 5], 20),
-    ([-1, 2, 3, 4, 5], 5),
-    ([1, 2, 3, 21, 18], 21),
-    ([], float("-inf")),
-    ([-1, -2, -3, -4, -5], -1),
+    (0, []),
+    (1, []),
+    (2, [1]),
+    (300, [i for i in range(1, 300, 2)]),
 ]
 
 
@@ -15,7 +14,7 @@ def test(input1, expected_output):
     print("---------------------------------")
     print(f"Inputs: {input1}")
     print(f"Expecting: {expected_output}")
-    result = find_max(input1)
+    result = get_odd_numbers(input1)
     print(f"Actual: {result}")
     if result == expected_output:
         print("Pass")

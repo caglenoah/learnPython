@@ -1,40 +1,25 @@
 from main import *
 
 run_cases = [
-    (["Bread", "Potion", "Shortsword", "Bread"], (1, 2, 1)),
-    (["Potion", "Potion", "Shortsword", "Buckler", "Iron Mace"], (2, 0, 1)),
+    (["Potion", "Healing Potion", "Iron Breastplate", "Leather Scraps"], True),
+    (["Potion", "Shortsword", "Buckler", "Iron Mace"], False),
 ]
 
 submit_cases = run_cases + [
-    ([], (0, 0, 0)),
-    (
-        [
-            "Potion",
-            "Leather Scraps",
-            "Bread",
-            "Iron Ore",
-            "Light Leather",
-            "Bread",
-            "Shortsword",
-            "Longsword",
-            "Ironwood Branch",
-            "Shortsword",
-            "Shortsword",
-        ],
-        (1, 2, 3),
-    ),
-    (["Bread", "Bread", "Bread", "Bread"], (0, 4, 0)),
-    (["Shortsword", "Shortsword", "Shortsword", "Shortsword"], (0, 0, 4)),
-    (["Potion"], (1, 0, 0)),
-    (["Potion", "Bread", "Shortsword"], (1, 1, 1)),
+    ([], False),
+    (["Leather Scraps"], True),
+    (["Potion", "Leather Scraps", "Leather Scraps"], True),
+    (["Potion", "Healing Potion"], False),
+    (["Leather scraps"], False),
+    (["Leather", "Scraps"], False),
 ]
 
 
-def test(input, expected_output):
+def test(input1, expected_output):
     print("---------------------------------")
-    print(f"Inputs: {input}")
+    print(f"Inputs: {input1}")
     print(f"Expecting: {expected_output}")
-    result = get_item_counts(input)
+    result = contains_leather_scraps(input1)
     print(f"Actual: {result}")
     if result == expected_output:
         print("Pass")

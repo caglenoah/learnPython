@@ -1,28 +1,8 @@
-def get_heroes():
-    heroes = [("Glorfindel", 2093, True),
-              ("Gandalf", 1054, False),
-              ("Gimli", 389, False),
-              ("Aragorn", 87, False)]
-
-    return heroes
+def get_first_item(items):
 
 
-# Don't touch below this line
-
-
-def test():
-    heroes = get_heroes()
-    for hero in heroes:
-        print(f"name: {hero[0]}, age: {hero[1]}, is_elf: {hero[2]}")
-
-
-def main():
-    test()
-
-
-main()
-
-
-
-
-
+   
+   
+   
+    # . Write a function that returns the first element from a list.
+    # If the list is empty then return the string ERROR instead.

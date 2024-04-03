@@ -2,52 +2,27 @@ from main import *
 
 run_cases = [
     (
-        [
-            "Harry",
-            "Hermione",
-            "Ron",
-            "Ginny",
-            "Fred",
-            "Neville",
-            "Draco",
-            "Luna",
-            "Cho",
-            "Gregory",
-            "Lee",
-            "Michael",
-            "Lavender",
-            "Frank",
-            "Anthony",
-            "Allan",
-        ],
-        (
-            ["Harry", "Ron", "Fred", "Draco", "Cho", "Lee", "Lavender", "Anthony"],
-            [
-                "Hermione",
-                "Ginny",
-                "Neville",
-                "Luna",
-                "Gregory",
-                "Michael",
-                "Frank",
-                "Allan",
-            ],
-        ),
+        ["A", "A", "C", "D", "D", "B", "C", "D"],
+        ["A", "B", "C", "A", "D", "B", "C", "D"],
+        (75.0),
     ),
-    (["Mike", "Walter", "Skyler", "Tuco"], (["Mike", "Skyler"], ["Walter", "Tuco"])),
+    (
+        ["A", "B", "C", "D", "D", "B", "C"],
+        ["A", "B", "C", "D", "D", "B", "C"],
+        (100.00),
+    ),
 ]
 
 submit_cases = run_cases + [
-    (["Alice", "Bob", "Charlie", "David"], (["Alice", "Charlie"], ["Bob", "David"])),
-    ([], ([], [])),
+    (["A", "B", "C", "D", "D", "B", "C"], ["B", "A", "B", "A", "A", "C", "A"], (0.00)),
 ]
 
 
-def test(input1, expected_output):
+def test(input1, input2, expected_output):
     print("---------------------------------")
-    print(f"Inputs: {input1}")
+    print(f"Inputs:\nanswer_sheet: {input1}\nstudent_answers: {input2}")
     print(f"Expecting: {expected_output}")
-    result = split_players_into_teams(input1)
+    result = get_test_score(input1, input2)
     print(f"Actual: {result}")
     if result == expected_output:
         print("Pass")
@@ -72,9 +47,8 @@ def main():
     print(f"{passed} passed, {failed} failed")
 
 
+test_cases = submit_cases
 if "__RUN__" in globals():
     test_cases = run_cases
-else:
-    test_cases = submit_cases
 
 main()

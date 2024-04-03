@@ -53,4 +53,4 @@ test_cases = submit_cases
 if "__RUN__" in globals():
     test_cases = run_cases
 
-main(
+main()

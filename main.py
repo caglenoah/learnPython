@@ -13,8 +13,8 @@ def clear_inventory():
     # don't touch above this line
 
     for i in range(0, len(inventory)):
+        item = inventory.pop()
         
-
         # don't touch below this line
         print(f"Selling: {item}")
         print(f"inventory: {inventory}")

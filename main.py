@@ -7,11 +7,11 @@ def get_item_counts(items):
 
     for i in range(0, len(items)):
         if items[i] == "Potion":
-            potion_count += 1
+            potion_count = potion_count + 1
         elif items[i] == "Bread":
-            bread_count += 1
+            bread_count = bread_count + 1
         elif items[i] == "Shortsword":
-            shortsword_count += 1
+            shortsword_count = shortsword_count + 1
     
 
     # don't touch below this line

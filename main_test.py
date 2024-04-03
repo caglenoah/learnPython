@@ -1,21 +1,40 @@
 from main import *
 
-run_cases = [(10, [1, 3, 5, 7, 9]), (20, [1, 3, 5, 7, 9, 11, 13, 15, 17, 19])]
+run_cases = [
+    (
+        ["Thrundar", "Morgate", "Gandolfo", "Thraine", "Norwad", "Gilforn"],
+        (
+            ["Gandolfo", "Thraine", "Norwad", "Gilforn"],
+            ["Thrundar", "Morgate", "Gandolfo", "Thraine"],
+            ["Thrundar", "Gandolfo", "Norwad"],
+        ),
+    ),
+]
 
 submit_cases = run_cases + [
-    (0, []),
-    (1, []),
-    (2, [1]),
-    (300, [i for i in range(1, 300, 2)]),
+    (
+        (["John", "Sydney", "Spencer", "Bill", "Matthew", "Brandon", "Tony"]),
+        (
+            ["Spencer", "Bill", "Matthew", "Brandon", "Tony"],
+            ["John", "Sydney", "Spencer", "Bill", "Matthew"],
+            ["John", "Spencer", "Matthew", "Tony"],
+        ),
+    ),
+    (([]), ([], [], [])),
 ]
 
 
 def test(input1, expected_output):
-    print("---------------------------------")
-    print(f"Inputs: {input1}")
-    print(f"Expecting: {expected_output}")
-    result = get_odd_numbers(input1)
-    print(f"Actual: {result}")
+    print("-" * 40)
+    print(f"Input:\n{input1}")
+    print(f"Expecting:\n{expected_output}")
+    try:
+        slice_1, slice_2, slice_3 = get_champion_slices(input1)
+        result = (slice_1, slice_2, slice_3)
+    except Exception as e:
+        print(f"Error: {e}")
+        return False
+    print(f"Actual:\n{result}")
     if result == expected_output:
         print("Pass")
         return True

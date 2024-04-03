@@ -1,20 +1,10 @@
-def get_odd_numbers(num):
-    odd_numbers = []
-
-    for i in range(0, num):
-        if i % 2 != 0:
-            odd_numbers.append(i)
-
-
-    # don't touch below this line
-
-    return odd_numbers
+def get_champion_slices(champions):
+    pass
 
 
 
 
 
-# ASSIGNMENT
-# Inside the loop in the get_odd_numbers function,
-# use the modulo operator to check if each number, 
-# i, is odd. If a number is odd, append it to the odd_numbers list.
+# First, return a slice of the champions list that starts with the third champion and goes to the end of the list.
+# Next, return a slice of the champions list that starts at the beginning of the list and ends with the third champion from the end (inclusive).
+# Last, return a slice of the champions list that only includes the champions in even numbered indexes.

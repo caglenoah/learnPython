@@ -1,8 +1,32 @@
-def generate_user_list(num_of_users):
-    player_ids = []
+def clear_inventory():
+    inventory = [
+        "Healing Potion",
+        "Iron Bar",
+        "Kite Shield",
+        "Shortsword",
+        "Leather Scraps",
+        "Tattered Cloth",
+    ]
 
-    for i in range(0, num_of_users):
-        player_ids.append(i)
-     
+    print(f"inventory: {inventory}")
 
-    return player_ids
+    # don't touch above this line
+
+    for i in range(0, len(inventory)):
+        
+
+        # don't touch below this line
+        print(f"Selling: {item}")
+        print(f"inventory: {inventory}")
+
+
+def test():
+    clear_inventory()
+    print("=====================================")
+
+
+def main():
+    test()
+
+
+main()

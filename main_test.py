@@ -2,98 +2,78 @@ from main import *
 
 run_cases = [
     (
-        ["basketball", "football", "soccer", "baseball", "basketball"],
-        {"basketball", "football", "soccer", "baseball"},
+        "Building a job-ready portfolio of coding projects does not happen overnight.",
+        (24, {"i", "u", "e", "o", "a"}),
     ),
-    (
-        [
-            "Age of Empires",
-            "World of Warcraft",
-            "Halo",
-            "Call of Duty",
-            "Age of Empires",
-            "Magic the Gathering",
-            "Halo",
-        ],
-        {
-            "Age of Empires",
-            "World of Warcraft",
-            "Halo",
-            "Call of Duty",
-            "Magic the Gathering",
-        },
-    ),
+    ("Applications are normal programs.", (11, {"i", "A", "e", "o", "a"})),
 ]
 
 submit_cases = run_cases + [
-    (
-        [
-            "Lane",
-            "Allan",
-            "James",
-            "Tiffany",
-            "John",
-            "Cameron",
-            "Lane",
-            "Allan",
-            "James",
-            "Tiffany",
-            "John",
-            "Cameron",
-            "Chad",
-            "Tj",
-            "Tim",
-            "Gertrude",
-            "Stephanie",
-        ],
-        {
-            "Lane",
-            "Allan",
-            "James",
-            "Tiffany",
-            "John",
-            "Cameron",
-            "Chad",
-            "Tj",
-            "Tim",
-            "Gertrude",
-            "Stephanie",
-        },
-    ),
-    ([], set()),
-    (["apple", "apple", "apple", "apple", "apple"], {"apple"}),
-    (["a", "b", "c", "c", "b", "a"], {"a", "b", "c"}),
-    (["123", "456", "789", "123", "456", "789"], {"123", "456", "789"}),
-    (
-        [
-            "python",
-            "java",
-            "c++",
-            "ruby",
-            "python",
-            "java",
-            "c++",
-            "ruby",
-            "python",
-            "java",
-            "c++",
-            "ruby",
-            "python",
-            "java",
-            "c++",
-            "ruby",
-        ],
-        {"python", "java", "c++", "ruby"},
-    ),
+    ("RANDOM TEXT WITH FEW VOWELS.", (7, {"I", "O", "A", "E"})),
+    ("", (0, set())),
+    ("A quick brown fox jumps over the lazy dog", (11, {"i", "A", "u", "e", "o", "a"})),
 ]
 
 
-def test(input, expected_output):
+def test(input1, expected_output):
     print("---------------------------------")
-    print(f"Input list: {input}")
-    print(f"Expected set: {expected_output}")
-    result = remove_duplicates(input)
-    print(f"Actual set: {result}")
+    print(f"Inputs:")
+    print(f" * Text: {input1}")
+    print(f"Expecting: {expected_output}")
+    result = count_vowels(input1)
+    print(f"Actual: {result}")
+    if result == expected_output:
+        print("Pass")
+        return True
+    print("Fail")
+    return False
+
+
+def main():
+    passed = 0
+    failed = 0
+    for test_case in test_cases:
+        correct = test(*test_case)
+        if correct:
+            passed += 1
+        else:
+            failed += 1
+    if failed == 0:
+        print("============= PASS ==============")
+    else:
+        print("============= FAIL ==============")
+    print(f"{passed} passed, {failed} failed")
+
+
+test_cases = submit_cases
+if "__RUN__" in globals():
+    test_cases = run_cases
+
+main()
+from main import *
+
+run_cases = [
+    (
+        "Building a job-ready portfolio of coding projects does not happen overnight.",
+        (24, {"i", "u", "e", "o", "a"}),
+    ),
+    ("Applications are normal programs.", (11, {"i", "A", "e", "o", "a"})),
+]
+
+submit_cases = run_cases + [
+    ("RANDOM TEXT WITH FEW VOWELS.", (7, {"I", "O", "A", "E"})),
+    ("", (0, set())),
+    ("A quick brown fox jumps over the lazy dog", (11, {"i", "A", "u", "e", "o", "a"})),
+]
+
+
+def test(input1, expected_output):
+    print("---------------------------------")
+    print(f"Inputs:")
+    print(f" * Text: {input1}")
+    print(f"Expecting: {expected_output}")
+    result = count_vowels(input1)
+    print(f"Actual: {result}")
     if result == expected_output:
         print("Pass")
         return True

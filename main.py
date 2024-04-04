@@ -1,29 +1,3 @@
-def main():
-    try:
-        print(get_player_record(1))
-    except Exception as e:
-        print(e)
-    try:
-        print(get_player_record(2))
-    except Exception as e:
-        print(e)
-    try: 
-        print(get_player_record(3))
-    except Exception as e:
-        print(e)
-    try:
-        print(get_player_record(4))
-    except Exception as e:
-        print(e)
-
-        
-
-
-
-
-# Don't edit below this line
-
-
 def get_player_record(player_id):
     if player_id == 1:
         return {"name": "Slayer", "level": 128}
@@ -31,7 +5,3 @@ def get_player_record(player_id):
         return {"name": "Dorgoth", "level": 300}
     if player_id == 3:
         return {"name": "Saruman", "level": 4000}
-    raise Exception("player id not found")
-
-
-main()

@@ -2,117 +2,46 @@ from main import *
 
 run_cases = [
     (
-        (
-            [
-                "milk",
-                "eggs",
-                "cheese",
-                "apples",
-                "bananas",
-                "lettuce",
-                "cereal",
-            ],
-            [
-                "milk",
-                "oatmeal",
-                "eggs",
-                "cheese",
-                "apples",
-                "bananas",
-                "carrots",
-                "lettuce",
-                "potatoes",
-                "cereal",
-                "chicken",
-            ],
-        ),
-        (
-            ["oatmeal", "carrots", "potatoes", "chicken"],
-            {
-                "milk": 2.5,
-                "eggs": 3.25,
-                "cheese": 3.5,
-                "apples": 7.44,
-                "bananas": 3.88,
-                "lettuce": 1.12,
-                "cereal": 5.99,
-            },
-            27.68,
-        ),
-    ),
+        [
+            "fireball",
+            "eldrich blast",
+            "fireball",
+            "eldrich blast",
+            "chill touch",
+            "eldrich blast",
+            "chill touch",
+            "chill touch",
+            "fireball",
+            "fireball",
+            "shocking grasp",
+            "fireball",
+            "fireball",
+        ],
+        ["chill touch", "eldrich blast", "fireball", "shocking grasp"],
+    )
 ]
 
 submit_cases = run_cases + [
+    (["fireball", "fireball", "fireball"], ["fireball"]),
     (
-        (
-            ["milk", "bread", "lettuce", "cereal"],
-            [
-                "milk",
-                "eggs",
-                "bread",
-                "cheese",
-                "apples",
-                "bananas",
-                "carrots",
-                "lettuce",
-                "potatoes",
-                "cereal",
-                "chicken",
-            ],
-        ),
-        (
-            ["eggs", "cheese", "apples", "bananas", "carrots", "potatoes", "chicken"],
-            {"milk": 2.5, "bread": 1.21, "lettuce": 1.12, "cereal": 5.99},
-            10.82,
-        ),
+        ["fireball", "eldrich blast", "chill touch", "shocking grasp"],
+        ["chill touch", "eldrich blast", "fireball", "shocking grasp"],
     ),
-    (
-        (
-            [
-                "milk",
-                "eggs",
-                "bread",
-                "cheese",
-                "apples",
-                "bananas",
-                "carrots",
-                "lettuce",
-                "potatoes",
-                "cereal",
-            ],
-            ["milk", "bread", "lettuce", "cereal"],
-        ),
-        (
-            [],
-            {
-                "milk": 2.50,
-                "eggs": 3.25,
-                "bread": 1.21,
-                "cheese": 3.50,
-                "apples": 7.44,
-                "bananas": 3.88,
-                "carrots": 3.89,
-                "lettuce": 1.12,
-                "potatoes": 32.21,
-                "cereal": 5.99,
-            },
-            64.99,
-        ),
-    ),
+    (["chill touch", "chill touch", "chill touch"], ["chill touch"]),
+    (["shocking grasp", "shocking grasp", "shocking grasp"], ["shocking grasp"]),
+    ([], []),
+    (["eldrich blast", "eldrich blast", "eldrich blast"], ["eldrich blast"]),
 ]
 
 
-def test(input1, expected_output):
+def test(input, expected_output):
     print("---------------------------------")
-    print(f"Inputs: {input1}")
+    print(f"Inputs:")
+    print(f" * spells: {input}")
     print(f"Expecting: {expected_output}")
-    try:
-        unpurchased_items, receipt, total = calculate_total(*input1)
-    except Exception as e:
-        print(f"Error: {e}")
-        print("Fail")
-        return False
-    result = (unpurchased_items, receipt, total)
+    result = remove_duplicates(input)
+    if isinstance(result, list):
+        result.sort()
     print(f"Actual: {result}")
     if result == expected_output:
         print("Pass")

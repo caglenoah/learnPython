@@ -1,34 +1,30 @@
 from main import *
 
 run_cases = [
-    (1, {"name": "Slayer", "level": 128}),
-    (4, "player id not found"),
-    (3, {"name": "Saruman", "level": 4000}),
+    (0, {"name": "Slayer", "level": 128}),
+    (1, {"name": "Dorgoth", "level": 300}),
+    (3, "index is too high"),
+    (-1, "negative ids not allowed"),
 ]
 
 submit_cases = run_cases + [
-    (2, {"name": "Dorgoth", "level": 300}),
-    (5, "player id not found"),
-    (0, "player id not found"),
+    (2, {"name": "Saruman", "level": 4000}),
+    (10, "index is too high"),
+    (-5, "negative ids not allowed"),
 ]
 
 
-def test(input1, expected_output):
+def test(input, expected_output):
     print("---------------------------------")
-    print(f"Inputs:")
-    print(f" * player_id: {input1}")
+    print(f"Inputs: {input}")
     print(f"Expecting: {expected_output}")
-    try:
-        result = get_player_record(input1)
-        print(f"Actual: {result}")
-        if result == expected_output:
-            print("Pass")
-            return True
-    except Exception as e:
-        print(f"Actual: {str(e)}")
-        if str(e) == expected_output:
-            print("Pass")
-            return True
+    result = handle_get_player_record(input)
+    print(f"Actual: {result}")
+    if isinstance(result, Exception):
+        result = f"{result}"
+    if result == expected_output:
+        print("Pass")
+        return True
     print("Fail")
     return False
 

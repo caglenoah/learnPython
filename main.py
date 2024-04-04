@@ -1,8 +1,14 @@
-def get_player_record(player_id):
-    if player_id == 1:
-        return {"name": "Slayer", "level": 128}
-    if player_id == 2:
-        return {"name": "Dorgoth", "level": 300}
-    if player_id == 3:
-        return {"name": "Saruman", "level": 4000}
-    raise Exception("player id not found")
+def handle_get_player_record(player_id):
+
+
+
+
+    def get_player_record(player_id):
+    if player_id < 0:
+        raise Exception("negative ids not allowed")
+    players = [
+        {"name": "Slayer", "level": 128},
+        {"name": "Dorgoth", "level": 300},
+        {"name": "Saruman", "level": 4000},
+    ]
+    return players[player_id]

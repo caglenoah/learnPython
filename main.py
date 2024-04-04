@@ -1,5 +1,10 @@
 def remove_duplicates(spells):
-    
+    new_list = []
+    spell_set = set()
+    for spell in spells:
+        spell_set.add(spell)
+        new_list = list(spell_set)
+    return new_list
 
 
 

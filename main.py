@@ -1,5 +1,1 @@
-def double_string(string):
-    alien_english = ""
-    for char in string:
-        alien_english += char * 2
-    return alien_english
+def get_character_record(name, server, level, rank):

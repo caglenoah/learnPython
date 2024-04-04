@@ -1,6 +1,37 @@
-def find_missing_ids(first_ids, second_ids):
-    id_set1 = set(first_ids)
-    id_set2 = set(second_ids)
-    missing_ids_set = id_set1 - id_set2
-    missing_ids = list(missing_ids_set)
-    return missing_ids
+def main():
+    try:
+        print(get_player_record(1))
+    except Exception as e:
+        print(e)
+    try:
+        print(get_player_record(2))
+    except Exception as e:
+        print(e)
+    try: 
+        print(get_player_record(3))
+    except Exception as e:
+        print(e)
+    try:
+        print(get_player_record(4))
+    except Exception as e:
+        print(e)
+
+        
+
+
+
+
+# Don't edit below this line
+
+
+def get_player_record(player_id):
+    if player_id == 1:
+        return {"name": "Slayer", "level": 128}
+    if player_id == 2:
+        return {"name": "Dorgoth", "level": 300}
+    if player_id == 3:
+        return {"name": "Saruman", "level": 4000}
+    raise Exception("player id not found")
+
+
+main()

@@ -2,47 +2,98 @@ from main import *
 
 run_cases = [
     (
+        ["basketball", "football", "soccer", "baseball", "basketball"],
+        {"basketball", "football", "soccer", "baseball"},
+    ),
+    (
         [
-            "fireball",
-            "eldrich blast",
-            "fireball",
-            "eldrich blast",
-            "chill touch",
-            "eldrich blast",
-            "chill touch",
-            "chill touch",
-            "fireball",
-            "fireball",
-            "shocking grasp",
-            "fireball",
-            "fireball",
+            "Age of Empires",
+            "World of Warcraft",
+            "Halo",
+            "Call of Duty",
+            "Age of Empires",
+            "Magic the Gathering",
+            "Halo",
         ],
-        ["chill touch", "eldrich blast", "fireball", "shocking grasp"],
-    )
+        {
+            "Age of Empires",
+            "World of Warcraft",
+            "Halo",
+            "Call of Duty",
+            "Magic the Gathering",
+        },
+    ),
 ]
 
 submit_cases = run_cases + [
-    (["fireball", "fireball", "fireball"], ["fireball"]),
     (
-        ["fireball", "eldrich blast", "chill touch", "shocking grasp"],
-        ["chill touch", "eldrich blast", "fireball", "shocking grasp"],
+        [
+            "Lane",
+            "Allan",
+            "James",
+            "Tiffany",
+            "John",
+            "Cameron",
+            "Lane",
+            "Allan",
+            "James",
+            "Tiffany",
+            "John",
+            "Cameron",
+            "Chad",
+            "Tj",
+            "Tim",
+            "Gertrude",
+            "Stephanie",
+        ],
+        {
+            "Lane",
+            "Allan",
+            "James",
+            "Tiffany",
+            "John",
+            "Cameron",
+            "Chad",
+            "Tj",
+            "Tim",
+            "Gertrude",
+            "Stephanie",
+        },
     ),
-    (["chill touch", "chill touch", "chill touch"], ["chill touch"]),
-    (["shocking grasp", "shocking grasp", "shocking grasp"], ["shocking grasp"]),
-    ([], []),
-    (["eldrich blast", "eldrich blast", "eldrich blast"], ["eldrich blast"]),
+    ([], set()),
+    (["apple", "apple", "apple", "apple", "apple"], {"apple"}),
+    (["a", "b", "c", "c", "b", "a"], {"a", "b", "c"}),
+    (["123", "456", "789", "123", "456", "789"], {"123", "456", "789"}),
+    (
+        [
+            "python",
+            "java",
+            "c++",
+            "ruby",
+            "python",
+            "java",
+            "c++",
+            "ruby",
+            "python",
+            "java",
+            "c++",
+            "ruby",
+            "python",
+            "java",
+            "c++",
+            "ruby",
+        ],
+        {"python", "java", "c++", "ruby"},
+    ),
 ]
 
 
 def test(input, expected_output):
     print("---------------------------------")
-    print(f"Inputs:")
-    print(f" * spells: {input}")
-    print(f"Expecting: {expected_output}")
+    print(f"Input list: {input}")
+    print(f"Expected set: {expected_output}")
     result = remove_duplicates(input)
-    if isinstance(result, list):
-        result.sort()
-    print(f"Actual: {result}")
+    print(f"Actual set: {result}")
     if result == expected_output:
         print("Pass")
         return True

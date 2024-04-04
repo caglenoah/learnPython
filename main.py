@@ -7,5 +7,4 @@ def count_enemies(enemy_names):
             if name == enemy_name:
                 enemy_type_count += 1
         enemies_dict[f"{' '.join(enemy)}"] = enemy_type_count
-        return enemies_dict
-
+    return enemies_dict

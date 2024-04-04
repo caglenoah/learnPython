@@ -1,25 +1,18 @@
 def get_test_score(answer_sheet, student_answers):
-    correct_ans = 0
-    for ans_key, ans_student in zip(answer_sheet, student_answers):
-        if ans_key == ans_student:
-            correct_ans += 1
-    percentage = (correct_ans / len(answer_sheet)) * 100
-    return percentage
-        
+
+    
 
 
 
 
+   
+   
+   
+   
+   
+   
+   
+    # Complete the get_test_score function.
+    # It should calculate a report that describes the percentage 
+    # of multiple-choice answers a student got right on their test.
 
-
-
-
-
-#my original code
-# def get_test_score(answer_sheet, student_answers):
-#     correct_ans = 0 
-#     for i in range(len(answer_sheet)):
-#         if answer_sheet[i] == student_answers[i]:
-#             correct_ans += 1
-#     percentage = (correct_ans / len(answer_sheet)) * 100
-#     return percentage

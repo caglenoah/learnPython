@@ -2,61 +2,121 @@ from main import *
 
 run_cases = [
     (
-        {"first_quarter": 24, "second_quarter": 31},
-        {"third_quarter": 29, "fourth_quarter": 40},
-        124,
-    ),
-    (
-        {"first_quarter": 12, "second_quarter": 2},
-        {"third_quarter": 32, "fourth_quarter": 87},
-        133,
+        (
+            [
+                "milk",
+                "eggs",
+                "cheese",
+                "apples",
+                "bananas",
+                "lettuce",
+                "cereal",
+            ],
+            [
+                "milk",
+                "oatmeal",
+                "eggs",
+                "cheese",
+                "apples",
+                "bananas",
+                "carrots",
+                "lettuce",
+                "potatoes",
+                "cereal",
+                "chicken",
+            ],
+        ),
+        (
+            ["oatmeal", "carrots", "potatoes", "chicken"],
+            {
+                "milk": 2.5,
+                "eggs": 3.25,
+                "cheese": 3.5,
+                "apples": 7.44,
+                "bananas": 3.88,
+                "lettuce": 1.12,
+                "cereal": 5.99,
+            },
+            27.68,
+        ),
     ),
 ]
 
 submit_cases = run_cases + [
     (
-        {"first_quarter": 25, "second_quarter": 2},
-        {"third_quarter": 31, "fourth_quarter": 0},
-        58,
+        (
+            ["milk", "bread", "lettuce", "cereal"],
+            [
+                "milk",
+                "eggs",
+                "bread",
+                "cheese",
+                "apples",
+                "bananas",
+                "carrots",
+                "lettuce",
+                "potatoes",
+                "cereal",
+                "chicken",
+            ],
+        ),
+        (
+            ["eggs", "cheese", "apples", "bananas", "carrots", "potatoes", "chicken"],
+            {"milk": 2.5, "bread": 1.21, "lettuce": 1.12, "cereal": 5.99},
+            10.82,
+        ),
     ),
     (
-        {"first_quarter": 10, "second_quarter": 20},
-        {"third_quarter": 30, "fourth_quarter": 40},
-        100,
-    ),
-    (
-        {"first_quarter": 15, "second_quarter": 25},
-        {"third_quarter": 0, "fourth_quarter": 0},
-        40,
-    ),
-    ({}, {}, 0),
-    (
-        {"first_quarter": 0, "second_quarter": 0},
-        {"third_quarter": 0, "fourth_quarter": 0},
-        0,
-    ),
-    (
-        {"first_quarter": 100, "second_quarter": 100},
-        {"third_quarter": 100, "fourth_quarter": 100},
-        400,
+        (
+            [
+                "milk",
+                "eggs",
+                "bread",
+                "cheese",
+                "apples",
+                "bananas",
+                "carrots",
+                "lettuce",
+                "potatoes",
+                "cereal",
+            ],
+            ["milk", "bread", "lettuce", "cereal"],
+        ),
+        (
+            [],
+            {
+                "milk": 2.50,
+                "eggs": 3.25,
+                "bread": 1.21,
+                "cheese": 3.50,
+                "apples": 7.44,
+                "bananas": 3.88,
+                "carrots": 3.89,
+                "lettuce": 1.12,
+                "potatoes": 32.21,
+                "cereal": 5.99,
+            },
+            64.99,
+        ),
     ),
 ]
 
 
-def test(input1, input2, expected_output):
+def test(input1, expected_output):
     print("---------------------------------")
-    print(f"Inputs:")
-    print(f" * first_half: {input1}")
-    print(f" * second_half: {input2}")
+    print(f"Inputs: {input1}")
     print(f"Expecting: {expected_output}")
-    merged = merge(input1, input2)
-    result = total_score(merged)
+    try:
+        unpurchased_items, receipt, total = calculate_total(*input1)
+    except Exception as e:
+        print(f"Error: {e}")
+        print("Fail")
+        return False
+    result = (unpurchased_items, receipt, total)
     print(f"Actual: {result}")
     if result == expected_output:
-        if len(merged) == 4 or expected_output == 0:
-            print("Pass")
-            return True
-        print("Dictionaries merged incorrectly")
+        print("Pass")
+        return True
     print("Fail")
     return False
 

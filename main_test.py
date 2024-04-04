@@ -1,28 +1,109 @@
 from main import *
 
 run_cases = [
-    ({"jackal": 4, "kobold": 3, "soldier": 10, "gremlin": 5}, "soldier"),
-    ({"jackal": 1, "kobold": 3, "soldier": 2, "gremlin": 5}, "gremlin"),
+    (
+        {
+            "type": {
+                "student": {
+                    "name": "Allan",
+                    "courses": {
+                        "math_1050": {
+                            "current_grade": "C",
+                        },
+                        "English_1010": {
+                            "current_grade": "A-",
+                        },
+                    },
+                }
+            }
+        },
+        "A-",
+    ),
+    (
+        {
+            "type": {
+                "student": {
+                    "name": "Lane",
+                    "courses": {
+                        "math_1050": {
+                            "current_grade": "D-",
+                        },
+                        "English_1010": {
+                            "current_grade": "B+",
+                        },
+                    },
+                }
+            }
+        },
+        "B+",
+    ),
 ]
 
 submit_cases = run_cases + [
-    ({"jackal": 2, "gremlin": 7}, "gremlin"),
-    ({"jackal": 3}, "jackal"),
-    ({}, None),
-    ({"jackal": 5, "kobold": 3, "soldier": 10, "gremlin": 5, "dragon": 20}, "dragon"),
-    ({"jackal": 5, "kobold": 3, "soldier": 2, "gremlin": 10, "dragon": 1}, "gremlin"),
+    (
+        {
+            "type": {
+                "student": {
+                    "name": "Breanna",
+                    "courses": {
+                        "math_1050": {
+                            "current_grade": "A",
+                        },
+                        "English_1010": {
+                            "current_grade": "A",
+                        },
+                    },
+                }
+            }
+        },
+        "A",
+    ),
+    (
+        {
+            "type": {
+                "student": {
+                    "name": "Tiff",
+                    "courses": {
+                        "math_1050": {
+                            "current_grade": "A-",
+                        },
+                        "English_1010": {
+                            "current_grade": "B-",
+                        },
+                    },
+                }
+            }
+        },
+        "B-",
+    ),
+    (
+        {
+            "type": {
+                "student": {
+                    "name": "Ali",
+                    "courses": {
+                        "math_1050": {
+                            "current_grade": "B+",
+                        },
+                        "English_1010": {
+                            "current_grade": "C-",
+                        },
+                    },
+                }
+            }
+        },
+        "C-",
+    ),
 ]
 
 
 def test(input1, expected_output):
     print("---------------------------------")
-    print(f"Inputs: {input1}")
+    print(f"Inputs:")
+    print(f" * Student Dictionary: {input1}")
     print(f"Expecting: {expected_output}")
-    result = get_most_common_enemy(input1)
-    if result == "None":
-        print('Actual: "None"')
-    else:
-        print(f"Actual: {result}")
+    result = get_english_grade(input1)
+    print(f"Actual: {result}")
     if result == expected_output:
         print("Pass")
         return True

@@ -1,5 +1,13 @@
 def make_purchases(purchase_orders):
-    # ?
+    leftovers = []
+    for order in purchase_orders:
+        try:
+            money_left = order["money_available"] - order["price"]
+            if money_left >= 0:
+                leftovers.append(money_left)
+        except Exception as e:
+            print("purchase exception:", e)
+    return leftovers
 
 
 # Don't edit below this line
